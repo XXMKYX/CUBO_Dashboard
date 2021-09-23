@@ -1,5 +1,6 @@
-import logo from './logo.svg';
+import logo from './files/CUBO.png';
 import './App.css';
+import Dash from './cpnt/dash';
 
 function App() {
   return (
@@ -7,18 +8,20 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+        Dashboard
         </p>
-        
+        <br/>
+        <Dash/>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://cubo.city/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Web Page
         </a>
       </header>
+      <div><Dash/></div>
     </div>
   );
 }
