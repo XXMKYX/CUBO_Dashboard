@@ -3,7 +3,7 @@ import {Bar, Line, Pie, Doughnut } from 'react-chartjs-2';
 import PostData from './output.json';
 
 class Dash extends Component {
-
+    
     constructor(props){
         super(props);
         this.state = {
@@ -31,16 +31,11 @@ class Dash extends Component {
     }
 
     render() { 
+        const {post} = this.props
         return (
             
-        <div className="dash">
-            <Bar
-                data={this.state.dataDash}
-                //width={100}
-                //height={50}
-                options={{ maintainAspectRatio: false }}
-            />
-        </div>
+        <h1>{post.year}</h1>
+            
         )
     }
 }

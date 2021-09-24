@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+//import data from './output.json';
 
 export default function Data() {
 
@@ -37,15 +38,13 @@ export default function Data() {
 	            </thead> 
 	            <tbody>
                 
-				{data.map(item => (
-                    
-					<tr key={item.Year}>
+				{data.map((item, index )=> (
+					<tr key={`post-list-key ${index}`}>
 					  <td>{item.Year}</td>
 					  <td>{item.Institutional_sector_name}</td>
 					  <td>{item.Institutional_sector_code}</td>
 					  <td>{item.Descriptor}</td>
 					</tr>
-  
 				  ))}
 
 	            </tbody>
@@ -55,7 +54,7 @@ export default function Data() {
 
 	      <section className="mt-5 mb-5">
 	        <div align="center">
-	            Desarrollado para <a href="cubo.city" target="_blank">CUBO</a>
+	            Desarrollado to <a href="cubo.city" target="_blank">CUBO</a>
 	        </div> 
 	      </section>
         
