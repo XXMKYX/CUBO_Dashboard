@@ -1,6 +1,7 @@
 import logo from './files/CUBO.png';
 import './App.css';
 import Dash from './cpnt/dash';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           Web Page
         </a>
       </header>
-      <div><Dash/></div>
+      <div></div>
     </div>
   );
 }
