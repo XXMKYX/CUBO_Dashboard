@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Bar, Line, Pie, Doughnut } from 'react-chartjs-2';
-import PostData from './output.json';
 
 class Dash extends Component {
 
@@ -32,7 +31,6 @@ class Dash extends Component {
 
     render() { 
         return (
-            
         <div className="dash">
             <Bar
                 data={this.state.dataDash}
@@ -40,6 +38,7 @@ class Dash extends Component {
                 //height={50}
                 options={{ maintainAspectRatio: false }}
             />
+
         </div>
         )
     }

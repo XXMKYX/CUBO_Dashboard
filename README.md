@@ -16,10 +16,3 @@ npm install --save react-chartjs-2 chart.js
 Iniciar aplicacion
 npm start
 
-CVS to JSON
-npm i csvtojson
-
-Tablas
-npm i bootstrap
-
-
