@@ -13,6 +13,9 @@ export default function PostDetail2(props) {
 			  <td>{post.Institutional_sector_name}</td>
 			  <td>{post.Institutional_sector_code}</td>
 			  <td>{post.Descriptor}</td>
+              <td>{post.SNA08TRANS}</td>
+              <td>{post.Asset_liability_code}</td>
+              <td>{post.Status}</td>
               <td>{post.Values}</td>
 			</tr>//data true
             
@@ -24,6 +27,9 @@ export default function PostDetail2(props) {
                   <td>{post.Institutional_sector_name}</td>
                   <td>{post.Institutional_sector_code}</td>
                   <td>{post.Descriptor}</td>
+                  <td>{post.SNA08TRANS}</td>
+              <td>{post.Asset_liability_code}</td>
+              <td>{post.Status}</td>
                   <td>{post.Values}</td>
                 </tr>
                 //data true

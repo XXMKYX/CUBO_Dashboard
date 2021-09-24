@@ -17,7 +17,10 @@ export default function table(props) {
                 <th scope="col">Institutional_sector_name</th>
                 <th scope="col">Institutional_sector_code</th>
                 <th scope="col">Descriptor</th>
-              <th scope="col">Values</th>
+                <th scope="col">SNA08TRANS</th>
+                <th scope="col">Asset_liability_code</th>
+                <th scope="col">Status</th>
+                <th scope="col">Values</th>
               </tr>
             </thead> 
             <tbody>
