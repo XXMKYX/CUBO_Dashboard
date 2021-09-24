@@ -4,6 +4,7 @@ import './App.css';
 import Dash from './cpnt/dash';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Tablita from './cpnt/table';
+import dass from './cpnt/DashDetail';
 import { render } from 'react-dom';
 
 function App() {
@@ -53,6 +54,7 @@ useEffect(() => {
 
       </div>
       <Tablita comboVar={comboVar}/>
+      <dass comboVar={comboVar}/>
     </div>
   );
 }

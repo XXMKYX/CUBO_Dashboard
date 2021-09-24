@@ -20,7 +20,7 @@ export default function PostDetail(props) {
     }, [comboVar])
 
     return(
-        <PostDetail2 post={post} year={year}/>
+        <DashDetail2 post={post} year={year}/>
     )
 }
 
