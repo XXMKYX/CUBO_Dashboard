@@ -13,7 +13,7 @@ class Dash extends Component {
                data={{
                    labels:PostData.map(item=>item.Year),
                    datasets:[{
-                       data:[100,200,300]
+                       data:PostData.map(item=>item.Values)
                    }]
                }}
                options={{ 

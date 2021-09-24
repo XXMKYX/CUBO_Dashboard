@@ -1,26 +1,34 @@
+import {useState,useEffect } from 'react';
 import logo from './files/CUBO.png';
 import './App.css';
 import Dash from './cpnt/dash';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import {Bar, Line, Pie, Doughnut } from 'react-chartjs-2';
-
-import PostData from './cpnt/output.json';
-import PostDetail from './cpnt/PostDetail';
+import Tablita from './cpnt/table';
+import { render } from 'react-dom';
 
 function App() {
+//const comboVar='selectYear'
+
+const [cambio, setCambio] = useState(false);
+  
+const [comboVar, setComboVar] = useState('selectYear');
+useEffect(() => {
+  (()=>{
+      if(cambio){
+        setComboVar(document.getElementById('combo').value);
+        setCambio(false);
+        console.log(document.getElementById('combo').value);
+      }
+  })();
+}, [cambio])
+
+
   return (
     <div className="App">
       <header className="App-header">
+      <br></br>
         <img src={logo} className="App-logo" alt="logo" />
-        <br/>
-        <a
-          className="App-link"
-          href="https://cubo.city/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          -> Web Page
-        </a><br></br>
+        <br></br>
       </header>
 
       <div>
@@ -28,39 +36,23 @@ function App() {
       <h1>Dashboard</h1>
       <Dash/>
       </div>
-      
-      <div className="container mt-5" align="center">
-	      <h4>Lista de Data</h4>
-	      <div className="row">
-	        <div className="col-md-12">
-	          <table className="table table-bordered">
-	            <thead className="thead-dark">
-	              <tr>
-	                <th scope="col">Year</th>
-	                <th scope="col">Institutional_sector_name</th>
-	                <th scope="col">Institutional_sector_code</th>
-	                <th scope="col">Descriptor</th>
-                  <th scope="col">Values</th>
-	              </tr>
-	            </thead> 
-	            <tbody>
 
-                {PostData.map((item,index)=>{
-                  return<PostDetail post={item} key={`post-list-key ${index}`}/>
-                })}
+      <div>
+      <br></br>
+      <h1>Dashboard</h1>
 
-      	      </tbody>
-	          </table>
-	        </div>
-	      </div>
-	      <section className="mt-5 mb-5">
-	        <div align="center">
-	            Desarrollado to <a href="cubo.city" target="_blank">CUBO</a>
-	        </div> 
-	      </section>
-    	</div>
+      <select id='combo' onChange={() => setCambio(true)}>
+        <option value='selectYear'>Selecciona el año</option>
+        <option value='2008.03'>2008</option>
+        <option value='2009.03'>2009</option>
+        <option value='2010.03'>2010</option>
+        <option value='2011.03'>2011</option>
+        <option value='2012.03'>2012</option>
 
+      </select>
 
+      </div>
+      <Tablita comboVar={comboVar}/>
     </div>
   );
 }

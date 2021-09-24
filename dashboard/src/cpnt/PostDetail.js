@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component, useState,useEffect } from 'react';
 import PostData from './output.json';
+import PostDetail2 from './PostDetail2';
 var a=0,b=0;
 
-class PostDetail extends Component{
-    render(){
-        const {post} = this.props
-        if(post.Year=='2008.03'){
-            a++;
-        }
-        //document.write(a);
-        console.log(post.Year=='2008.03');
-        return(
-			<tr>
-			  <td>{post.Year}</td>
-			  <td>{post.Institutional_sector_name}</td>
-			  <td>{post.Institutional_sector_code}</td>
-			  <td>{post.Descriptor}</td>
-              <td>{post.Values}</td>
-			</tr>
-        )
-    }
+export default function PostDetail(props) {
+
+    const {post,comboVar} = props
+    const [year, setYear] = useState('2008.03')
+
+    useEffect(() => {
+        (()=>{
+            if(comboVar == 'selectYear'){
+              setYear('all'); 
+            }else{
+                setYear(comboVar); 
+            }
+        })();
+    }, [comboVar])
+
+    return(
+        <PostDetail2 post={post} year={year}/>
+    )
 }
 
-export default PostDetail
