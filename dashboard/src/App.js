@@ -2,6 +2,7 @@ import logo from './files/CUBO.png';
 import './App.css';
 import Dash from './cpnt/dash';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import {Bar, Line, Pie, Doughnut } from 'react-chartjs-2';
 
 import PostData from './cpnt/output.json';
 import PostDetail from './cpnt/PostDetail';
@@ -25,9 +26,7 @@ function App() {
       <div>
       <br></br>
       <h1>Dashboard</h1>
-        {PostData.map((item2,index2)=>{
-          return<Dash post={item2} key={`post-list-key ${index2}`}/>
-        })}
+      <Dash/>
       </div>
       
       <div className="container mt-5" align="center">

@@ -4,38 +4,26 @@ import PostData from './output.json';
 
 class Dash extends Component {
     
-    constructor(props){
-        super(props);
-        this.state = {
-            dataDash:{
-                labels: ['Institutional','asset','values'],
-                datasets:[
-                    {
-                    label:'Years',
-                    data:[
-                        2008,
-                        2009,
-                        2010,
-                        2011,
-                        2012
-                    ],
-                    backgroundColor:[
-                        'rgba(255,99,132,0.6)',
-                        'rgba(255,99,132,0.6)',
-                        'rgba(255,99,132,0.6)'
-                    ]
-                    }
-                ]
-            }
-        }
-    }
-
     render() { 
         const {post} = this.props
         return (
-            
-        <h1>{post.year}</h1>
-            
+        <div className="dash">
+               
+            <Bar
+               data={{
+                   labels:PostData.map(item=>item.Year),
+                   datasets:[{
+                       data:[100,200,300]
+                   }]
+               }}
+               options={{ 
+                   maintainAspectRatio: false ,
+                  
+                }}
+                //width={100}
+                //height={50}
+            />
+        </div>
         )
     }
 }
